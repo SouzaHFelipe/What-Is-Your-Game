@@ -1,0 +1,49 @@
+/* App.css */
+
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.game-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-item.selected {
+  background-color: lightblue;
+}
+
+.delete-selected-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+}
+
+.delete-selected-btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
