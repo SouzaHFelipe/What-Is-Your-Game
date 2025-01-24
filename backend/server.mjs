@@ -24,14 +24,22 @@ const gameSchema = new mongoose.Schema({
 const Game = mongoose.model('Game', gameSchema);
 
 app.get('/games', async (req, res) => {
-  const games = await Game.find();
-  res.json(games);
+  try {
+    const games = await Game.find();
+    res.json(games);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching games", error });
+  }
 });
 
 app.post('/games', async (req, res) => {
-  const newGame = new Game(req.body);
-  await newGame.save();
-  res.json(newGame);
+  try {
+    const newGame = new Game(req.body);
+    await newGame.save();
+    res.json(newGame);
+  } catch (error) {
+    res.status(500).json({ message: "Error saving game", error });
+  }
 });
 
 app.delete('/games/:id', async (req, res) => {
